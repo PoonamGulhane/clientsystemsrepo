@@ -1,0 +1,35 @@
+<section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Client List</h2>
+              <table class="table table-bordered">
+                <thead>
+                    <tr>
+                    <th>Client Name</th>
+                    <th>Created At</th>
+                    <th>Action</th>
+                    <tr>
+                </thead>
+                <tbody>
+            <tr *ngFor="let clientdata of formResponse?.clients">
+                <td><a routerLink="/auth/client/view/{{clientdata._id}}">{{clientdata?.client?.clientName}}</a></td>
+                <td>{{clientdata?.date_created | date:'medium'}}</td>
+                <td>
+                    <a routerLink="/auth/client/edit/{{clientdata._id}}"><img src="assets/images/edit.svg" class="edit-delete"></a><img src="assets/images/delete.svg" class="edit-delete"></td>
+            </tr>
+                </tbody>
+            </table>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
